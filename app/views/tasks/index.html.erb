@@ -6,9 +6,9 @@
     <%= form_for tasks_path do |f| %>
       <li>
         <% if task.completed %>
-          [x] <%= link_to task.title, task_path(task) %>
+          <i class="far fa-check-square"></i> <%= link_to task.title, task_path(task) %>
         <% else %>
-          [ ] <%= link_to task.title, task_path(task) %>
+          <i class="far fa-square"></i> <%= link_to task.title, task_path(task) %>
         <% end %>
       </li>
     <% end %>
