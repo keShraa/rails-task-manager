@@ -1,0 +1,20 @@
+<h1><%= @task.title %></h1>
+<hr>
+<div class="jumbotron">
+  <div class="title">
+    <strong><%= @task.details%></strong>
+    <%= link_to 'Edit Task', edit_task_path, class:'btn btn-primary' %>
+  </div>
+
+  <p>
+    <small><% if @task.completed %>
+      [x] This task is completed
+    <% else %>
+      [ ] This task isn't completed yet
+    <% end %></small>
+  </p>
+</div>
+
+<hr>
+<%= link_to "Delete this task", task_path, method: :delete, data: {confirm: 'Do you want to confirm the delete?'}, class:'btn btn-danger' %>
+<%= link_to 'Back', tasks_path, class:'btn btn-primary' %>

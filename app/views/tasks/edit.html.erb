@@ -1,0 +1,7 @@
+<h1><%= @task.title %></h1>
+
+<hr>
+<%= render 'form', task: @task %>
+<hr>
+<%= link_to "Delete this task", task_path, method: :delete, data: {confirm: 'Do you want to confirm the delete?'}, class:'btn btn-danger' %>
+<%= link_to 'Back', tasks_path, class:'btn btn-primary' %>

@@ -1,0 +1,19 @@
+<h1>My Tasks</h1>
+<hr>
+
+<ul class="jumbotron">
+  <% @tasks.each do |task| %>
+    <%= form_for tasks_path do |f| %>
+      <li>
+        <% if task.completed %>
+          [x] <%= link_to task.title, task_path(task) %>
+        <% else %>
+          [ ] <%= link_to task.title, task_path(task) %>
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<hr>
+<%= link_to 'Add a task', new_task_path, class:'btn btn-primary' %>
